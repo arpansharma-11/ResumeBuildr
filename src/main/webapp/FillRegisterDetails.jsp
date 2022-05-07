@@ -16,16 +16,19 @@
 <%
 	try{
 		MongoCollection<Document> collection = cn.getCollection("registrationData");
-		
-		
-		
-		Document document = new Document("firstname", request.getParameter("first_name"))
-				.append("lastname", request.getParameter("last_name"))
-				.append("email", request.getParameter("email"))
-				.append("phone", request.getParameter("phone"))
-				.append("password", request.getParameter("password"));
-		collection.insertOne(document);
-		System.out.println("Register Details inserted successfully");
+		Document myEmail = collection.find(eq("email", request.getParameter("email"))).first();
+		if(myEmail == null){
+			Document document = new Document("firstname", request.getParameter("first_name"))
+					.append("lastname", request.getParameter("last_name"))
+					.append("email", request.getParameter("email"))
+					.append("phone", request.getParameter("phone"))
+					.append("password", request.getParameter("password"));
+			collection.insertOne(document);
+			System.out.println("Register Details inserted successfully");
+		}
+		else{
+			%><h1>User already exists</h1><%
+		}
 	}
 	catch(Exception e){
 		System.out.println(e);

@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import = "com.mongodb.DBCursor" %>
-<%@ page import = "com.mongodb.BasicDBObject"%>
 <%@ page import = "com.mongodb.client.MongoClients" %>
 <%@ page import = "com.mongodb.client.MongoClient"%>
 <%@ page import = "com.mongodb.client.MongoCollection"%>
@@ -17,17 +15,27 @@
 <%@ page import = "java.util.ArrayList"%>
 <%@ page import = "static com.mongodb.client.model.Filters.*"%>
 <%@ page import = "static com.mongodb.client.model.Updates.*"%> 
-<%@ page import = "java.util.Iterator" %>
 
 <%@ page import = "Connect.Connection" %>
 
 <%!Connection cn = new Connection();%>
 <%
+	try{
 	MongoCollection<Document> collection = cn.getCollection("registrationData");
-	BasicDBObject whereQuery = new BasicDBObject();
-	whereQuery.put("employeeId", 5);
-	DBCursor cursor = collection.find(whereQuery);
-	while(cursor.hasNext()) {
-	    System.out.println(cursor.next());
+	Document myEmail = collection.find(eq("email", request.getParameter("email"))).first();
+	if(myEmail != null){
+		if(myEmail.get("password").equals(request.getParameter("password"))){
+			%><h1>User Found</h1><%
+		}
+		else{
+			//%><h1>Wrong Password</h1><%
+		}
+	}
+	else{
+		%><h1>Email not found</h1><%
+	}
+	}
+	catch(Exception e){
+		System.out.println(e);
 	}
 %>
