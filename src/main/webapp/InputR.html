@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Register</title>
+<script type="text/javascript" src="Validation.js"></script>
+</head>
+<body>
+<form onsubmit ="return checkForm()" action = "FillRegisterDetails.jsp" method="post">
+<fieldset>
+<p>
+	<label>
+		First Name <input type="text" name = "first_name" placeholder = "Enter your First name">
+	</label>
+</p>
+
+<p>
+	<label>
+		Last Name <input type="text" name = "last_name" placeholder = "Enter your Second name">
+	</label>
+</p>
+
+<p>
+	<label>
+		Email <input type="email" name = "email" placeholder = "Enter your Email">
+	</label>
+</p>
+
+<p>
+	<label>
+		Phone No. <input type="text" placeholder = "Enter your Phone number" name = "phone" id="phone">
+	</label>
+</p>
+
+<p>
+	<label>
+		Password: <input type="password" placeholder = "Enter your password" name="password" id="password">
+	</label>
+</p>
+
+<p>
+	<label>
+		Confirm Password<input type = "password" placeholder = "Re-enter your password" name="Cpassword" id="Cpassword"><br><br>
+		<input type="checkbox" onclick="myFunction()">Show Password
+	</label>
+</p>
+</fieldset>
+
+<input type="submit" value="Login">
+</form>
+</body>
+</html>
