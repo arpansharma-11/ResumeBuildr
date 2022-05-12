@@ -19,4 +19,34 @@
     <servlet-name>Connect</servlet-name>
     <url-pattern>/Connect</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CheckLogin</display-name>
+    <servlet-name>CheckLogin</servlet-name>
+    <servlet-class>Connect.CheckLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckLogin</servlet-name>
+    <url-pattern>/CheckLogin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FillRegisterDetails</display-name>
+    <servlet-name>FillRegisterDetails</servlet-name>
+    <servlet-class>Connect.FillRegisterDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FillRegisterDetails</servlet-name>
+    <url-pattern>/FillRegisterDetails</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FillDatabase</display-name>
+    <servlet-name>FillDatabase</servlet-name>
+    <servlet-class>Connect.FillDatabase</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FillDatabase</servlet-name>
+    <url-pattern>/FillDatabase</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -7,12 +7,36 @@
 <title>Input</title>
 </head>
 <body>
-<form action = "FillDatabase.jsp" method="post">
+<form action = "FillDatabase" method="post">
 <h2>Personal Information</h2>
-First Name<input type = "text" name = "first_name" placeholder = "Enter First Name"><br>
-Last Name<input type = "text" name = "last_name" placeholder = "Enter Last Name"><br>
-Email<input type = "email" name = "email" placeholder = "Enter Email"><br>
-Phone No.<input type = "text" name = "phone" placeholder = "Enter Phone No."><br>
+<%! String fn,ln,eml,phn;%>
+<%
+	Cookie ck[] = request.getCookies();
+	for(int i = 0; i<ck.length; i++)
+	{
+		if(ck[i].getName().equals("first_name"))
+		{
+			fn = (String)ck[i].getValue();
+		}
+		if(ck[i].getName().equals("last_name"))
+		{
+			ln = (String)ck[i].getValue();
+		}
+		if(ck[i].getName().equals("email"))
+		{
+			eml = (String)ck[i].getValue();
+		}
+		if(ck[i].getName().equals("phone"))
+		{
+			phn = (String)ck[i].getValue();
+		}
+	}
+%>
+
+First Name<input type = "text" name = "first_name" value=<%=fn %>><br>
+Last Name<input type = "text" name = "last_name" value=<%=ln %>><br>
+Email<input type = "email" name = "email" value=<%=eml %>><br>
+Phone No.<input type = "text" name = "phone" value=<%=phn %>><br>
 Address<input type = "text" name = "address" placeholder = "Enter Address"><br><br>
 
 <h2>About</h2>
