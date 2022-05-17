@@ -1,0 +1,661 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    ;
+}
+
+body {
+    background-color: #000;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Quando', sans-serif;
+    color: #fff;
+}
+
+p {
+    color: #ddd;
+}
+
+i {
+    color: yellow;
+}
+
+.landing1,
+.account-page {
+    height: 100vh;
+    background-size: cover;
+    background: linear-gradient(158.60870105640015deg,
+            rgba(65, 65, 65, 1) 8.095705434207352%,
+            rgba(0, 0, 0, 1) 55.71027424949842%) no-repeat;
+    padding: 40px auto;
+}
+
+.landing2,
+.landing3,
+.landing4,
+.landing5 {
+    background-size: cover;
+    background: black;
+    padding: 40px auto;
+    margin: 10% auto;
+}
+
+.logo img {
+    width: 20%;
+}
+
+.navbar {
+    position: absolute;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    margin-right: 20px;
+    color: #ddd;
+}
+
+nav ul li a:hover {
+    color: yellow;
+}
+
+.menu-icon {
+    color: yellow;
+    width: 30px;
+    margin-left: 20px;
+    display: none !important;
+}
+
+.build-button {
+    border-radius: 5px;
+    border: 2px yellow groove;
+    padding: 0.5%;
+}
+
+.build-button a {
+    margin-right: 0px;
+    color: yellow;
+}
+
+.build-button:hover {
+    background-color: transparent;
+    transform: scale(1.1);
+    transition: all 1s;
+}
+
+.build-button a:hover {
+    color: yellow;
+}
+
+.landing1 .container {
+    padding: 15% 0 30px 0;
+}
+
+.container {
+    background: rgb(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 100px 0 30px 0;
+}
+
+.body-build-btn {
+    background-color: yellow;
+    text-align: center;
+    margin: 5% auto;
+    max-width: 200px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
+}
+
+.body-build-btn a {
+    font-weight: bolder;
+    color: #000;
+}
+
+.body-build-btn a:hover {
+    color: yellow;
+}
+
+.body-build-btn:hover {
+    background: transparent;
+    transition: all 1s;
+    transform: scale(1.1);
+}
+
+.container .header {
+    text-align: center;
+    padding: 0 12% 0 12%;
+}
+
+.landing1 .container .content {
+    text-align: center;
+    padding: 0 12% 0 12%;
+    margin: 50px auto;
+}
+
+.l2 {
+    font-family: 'Quando', sans-serif;
+}
+
+.underlined {
+    position: relative;
+    margin-right: 1rem;
+}
+
+.underlined:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 45%;
+    height: 10px;
+    width: 20%;
+    border: solid 2px yellow;
+    border-color: yellow transparent transparent transparent;
+    border-radius: 180%;
+}
+
+.landing2 .container {
+    display: flex;
+    justify-content: center;
+}
+
+.img-container {
+    text-align: center;
+    flex-basis: 50%;
+}
+
+.landing2 .img-container img {
+    width: 70%;
+    height: 90%;
+}
+
+.landing2 .side-container {
+    align-items: center;
+    flex-basis: 45%;
+}
+
+.landing2 .side-container .row {
+    margin: 10% 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.landing2 .side-container .row .col {
+    flex-basis: 90%;
+    margin: 10px;
+}
+
+.landing2 .side-container .row .icon {
+    flex-basis: 10%;
+    font-size: 2rem;
+}
+
+.landing2 .side-container .row .body {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    font-size: 1.5rem;
+}
+
+.landing3 .underlined:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 25%;
+    height: 10px;
+    width: 30%;
+    border: solid 2px yellow;
+    border-color: yellow transparent transparent transparent;
+    border-radius: 180%;
+}
+
+.landing3 .container,
+.footer .container {
+    background: black;
+    border: none;
+    padding: 100px 0 30px 0;
+}
+
+.landing3 .content {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5%;
+}
+
+.landing3 .img-container {
+    display: flex;
+    flex-basis: 45%;
+    align-items: center;
+}
+
+.landing3 .img-container img,
+.account-page .img-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.landing3 .side-container {
+    flex-basis: 40%;
+}
+
+.landing3 .side-container .row {
+    margin: 10% 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.highlight {
+    font-size: 120%;
+}
+
+.landing3 .highlight .num h1,
+.landing3 .highlight .body p {
+    color: yellow;
+}
+
+.landing3 h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.landing3 .num {
+    flex-basis: 10%;
+}
+
+.landing3 .num h1 {
+    color: #ddd;
+}
+
+.landing3 .body {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    flex-basis: 90%;
+}
+
+.stars {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.landing4 .rating p:first-of-type {
+    font-family: 'Quando', sans-serif;
+    font-size: larger;
+}
+
+.landing4 .rating p {
+    font-size: smaller;
+}
+
+.landing4 .row {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.landing4 .row .col {
+    padding: 30px 0;
+    text-align: center;
+    flex-basis: 40%;
+    margin: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.landing4 .row .col:hover {
+    transform: translateY(-10px);
+}
+
+.landing4 .row .col p {
+    padding: 10px;
+    font-size: 80%;
+}
+
+.landing4 .row .col img {
+    margin: 20px;
+    width: 15%;
+    border-radius: 50%;
+}
+
+.landing5 .content {
+    padding: 5% 5% 0 5%;
+}
+
+.landing5 .accordion {
+    border-radius: 5px;
+    margin-top: 1%;
+    color: white;
+    background: rgb(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    padding: 1%;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 0.8rem;
+    transition: 0.4s;
+}
+
+.active,
+.accordion:hover {
+    background-color: transparent;
+}
+
+.landing5 .panel {
+    padding: 1%;
+    display: none;
+    background: transparent;
+    overflow: hidden;
+}
+
+.landing5 .accordion h2:after {
+    content: '\2193';
+    font-size: 0.75rem;
+    font-weight: bolder;
+    color: yellow;
+    float: right;
+    margin-left: 5px;
+}
+
+.landing5 .active h2:after {
+    content: "\2191";
+}
+
+.footer .container {
+    padding: 100px 0 0 0;
+}
+
+.footer {
+    display: flex;
+    text-align: center;
+}
+
+.footer .img-container img {
+    width: 30%;
+    margin-bottom: 3%;
+}
+
+.footer .row {
+    margin: 1% auto 0 auto;
+    justify-content: center;
+    display: flex;
+}
+
+.footer .col {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .row .col a:hover {
+    color: yellow;
+}
+
+.account-page .container .row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.account-page .img-container {
+    flex-basis: 45%;
+    align-items: center;
+}
+
+.account-page .form-container {
+    background: rgb(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    width: 300px;
+    height: 500px;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    margin: auto;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.account-page .form-container span,
+.build-page .form-container span {
+    font-weight: 100;
+    padding: 0 10px;
+    color: #fff;
+    cursor: pointer;
+    width: 100px;
+    display: inline-block;
+}
+
+.form-container .form-btn {
+    display: inline-block;
+}
+
+.account-page .form-container form {
+    max-width: 300px;
+    padding: 0 30px;
+    position: absolute;
+    top: 100px;
+    transition: transform 1s;
+}
+
+.form-container form input[type="radio"] {
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+.option {
+    padding-top: 5px;
+}
+
+label,
+legend {
+    color:rgba(255, 255, 255, 0.5);
+}
+
+legend {
+    color: yellow;
+    padding:5px;
+}
+
+.form-container form input[type="text"],
+.form-container form input[type="password"],
+.form-container form input[type="email"],
+.form-container form input[type="date"] {
+    color: rgba(255, 255, 255, 0.5);
+    background: transparent;
+    width: 100%;
+    height: 30px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.form-container form .btn {
+    background: rgb(255, 255, 0, 0.7);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.form-container form .btn:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#login-form {
+    left: -300px;
+}
+
+#reg-form {
+    left: 0px;
+}
+
+.form-container form a {
+    font-size: 12px;
+    margin: 0 10px;
+}
+
+.form-container .form-btn #indicator {
+    width: 100px;
+    border: none;
+    background: yellow;
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(100px);
+    transition: transform 1s;
+}
+
+.form-container .show-passsword {
+    align-items: unset !important;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-container .show-passsword input {
+    flex-basis: 20%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.form-container .show-passsword p {
+    flex-basis: 80%;
+    font-size: 0.25rem;
+}
+
+.build-page .form-container {
+    background: rgb(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    margin: 10%;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+fieldset {
+    margin: 30px;
+    padding: 15px;
+}
+
+.build-page .form-container form .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.build-page .form-container form .line1 .col,
+.build-page .form-container form .line2 .col,
+.build-page .form-container form .line4 .col,
+.build-page .form-container form .line5 .col,
+.build-page .form-container form .line6 .col,
+.build-page .form-container form .line7 .col,
+.build-page .form-container form .line8 .col,
+.build-page .form-container form .line9 .col{
+    flex-direction: row;
+    flex-basis: 45%;
+}
+
+.build-page .form-container form .line3 .col {
+    flex-direction: row;
+    flex-basis: 20%;
+}
+
+.build-page .form-btn {
+    background-color: yellow;
+    color: #000;
+    border: none;
+    outline: none;
+    width: 30%;
+    height: 40px;
+    transition: all 1.5s;
+    border-radius: 5px;
+}
+
+.build-page .form-btn:hover {
+    border: 1px solid yellow;
+    color: yellow;
+    background-color: transparent;
+}
+
+@media only screen and (max-width: 900px) {
+    nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: rgb(255, 255, 0, 0.3);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        overflow: hidden;
+        transition: max-height 0.5s;
+    }
+
+    nav ul li {
+        display: block;
+    }
+
+    nav ul li a {
+        font-weight: bolder;
+        text-align: center;
+        display: block;
+        margin-left: 50px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        color: #000;
+    }
+
+    .menu-icon {
+        display: block !important;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .account-page .container .row {
+        flex-direction: column-reverse;
+    }
+    
+}

@@ -50,9 +50,10 @@ public class CheckLogin extends HttpServlet {
 		try{
 			MongoCollection<Document> collection = cn.getCollection("registrationData");
 			Document myEmail = collection.find(eq("email", request.getParameter("email"))).first();
+			
 			if(myEmail != null){
 				if(myEmail.get("password").equals(request.getParameter("password"))){
-					out.println("User Found");
+					response.sendRedirect("data.jsp");
 				}
 				else{
 					out.println("Wrong Password");

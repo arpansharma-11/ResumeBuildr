@@ -52,18 +52,25 @@ public class FillRegisterDetails extends HttpServlet {
 						.append("password", request.getParameter("password"));
 				collection.insertOne(document);
 				
+				int expireTime = 1;
+				
 				Cookie fn = new Cookie("first_name",request.getParameter("first_name"));
+				fn.setMaxAge(expireTime);
 				response.addCookie(fn);
 				
 				Cookie ln = new Cookie("last_name",request.getParameter("last_name"));
+				ln.setMaxAge(expireTime);
 				response.addCookie(ln);
 				
 				Cookie eml = new Cookie("email",request.getParameter("email"));
+				eml.setMaxAge(expireTime);
 				response.addCookie(eml);
 				
 				Cookie ph = new Cookie("phone",request.getParameter("phone"));
+				ph.setMaxAge(expireTime);
 				response.addCookie(ph);
 				
+				response.sendRedirect("data.jsp");
 				System.out.println("Register Details inserted successfully");
 			}
 			else{

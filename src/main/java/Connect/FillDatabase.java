@@ -52,20 +52,24 @@ public class FillDatabase extends HttpServlet {
 					.append("email", request.getParameter("email"))
 					.append("phone", request.getParameter("phone"))
 					.append("address", request.getParameter("address"))
-					.append("about", request.getParameter("about"))
+					.append("city", request.getParameter("city"))
+					.append("state", request.getParameter("state"))
+					.append("zip", request.getParameter("zip"))
 					.append("qualification", request.getParameter("qualification"))
 					.append("institute_name", request.getParameter("institute_name"))
 					.append("cgpa", request.getParameter("cgpa"))
+					.append("passing_year", request.getParameter("passing_year"))
 					.append("skill", request.getParameter("skill"))
 					.append("proficiency", request.getParameter("proficiency"))
 					.append("project_title", request.getParameter("project_title"))
 					.append("project_desc", request.getParameter("project_desc"))
 					.append("organization_name", request.getParameter("organization_name"))
 					.append("role", request.getParameter("role"))
-					.append("experience", request.getParameter("experience"))
-					.append("tenure", request.getParameter("tenure"))
-					.append("hobby", request.getParameter("hobby"));
+					.append("start-date", request.getParameter("start-date"))
+					.append("end-date", request.getParameter("end-date"))
+					.append("hobbies", request.getParameter("hobbies"));
 			collection.insertOne(document);
+			response.sendRedirect("Template1.jsp");
 			System.out.println("Document inserted successfully");
 		}
 		catch(Exception e){

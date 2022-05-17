@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumebuildr | Join Us</title>
+    <link rel="icon" type="image/x-icon" href="img/logo2.png">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Quando&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="img/logo1.png" alt="RB Logo" class="src">
+        </div>
+        <nav>
+            <ul id="menuItems">
+                <li>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="build-button">
+            <a href="joinus.html">Build</a>
+        </div>
+        <i class="fa-solid fa-bars menu-icon" onclick="menuToggle()"></i>
+    </div>
+
+    <section class="account-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-2 img-container">
+                    <img src="img/1.png" id="img" alt="resume builder">
+                </div>
+                <div class="col-2">
+                    <div class="form-container">
+                        <div class="form-btn">
+                            <span onclick="login()">Login</span>
+                            <span onclick="register()">Register</span>
+                            <hr id="indicator">
+                        </div>
+                        <form action = "CheckLogin" id="login-form" method = "post">
+                            <input name = "email" type="text" placeholder="Email" required>
+                            <input name = "password" type="password" placeholder="Password" required>
+                            <button type="submit" class="btn">Login</button>
+                            <a href="">Forgot Password</a>
+                        </form>
+                        <form action = "FillRegisterDetails" id="reg-form" name="submit-google-sheet" method="POST" onsubmit = "return validation()">
+                            <input name = "first_name" id="fname" name="fname" type="text" placeholder="First Name" required>
+                            <input name = "last_name" id="lname" name="lname" type="text" placeholder="Last Name" required>
+                            <input name = "email" id="email" name="email" type="email" placeholder="Email" required>
+                            <input name = "password" id="password" type="password" placeholder="Password" required>
+                            <input name = "confirm-password" id="confirm-password" type="password" placeholder="Confirm Password" required>
+                            <input id="number" name="phone" type="text" placeholder="Contact Number" required>
+                            <div class="show-password">
+                                <input id="show" name="show" type="checkbox" onclick="show_pass()">
+                                <p>Show Password</p>
+                            </div>
+                            <input type="submit" value="Register" class="btn">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="footer">
+            <div class="container">
+                <div class="img-container row">
+                    <img src="img/logo1.png" alt="logo">
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                    <div class="col">
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h5>&copy; 2022 Resume Builder</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+<script type = "text/javascript" src="showValidate.js"></script>
+<script>
+function show_pass() {
+    var x = document.getElementById("password");
+    var y = document.getElementById("confirm-password");
+    if (x.getAttribute('type') === "password" && y.getAttribute('type') === "password") {
+        x.setAttribute('type','text');
+        y.setAttribute('type','text');
+    } else {
+        x.setAttribute('type','password');
+        y.setAttribute('type','password');
+    }
+};
+</script>
+<script type="text/javascript">
+    var menuItems = document.getElementById("menuItems");
+    menuItems.style.maxHeight = "0px";
+
+    function menuToggle() {
+        if (menuItems.style.maxHeight == "0px") {
+            menuItems.style.maxHeight = "200px";
+        } else {
+            menuItems.style.maxHeight = "0px";
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    var loginForm = document.getElementById("login-form");
+    var regForm = document.getElementById("reg-form");
+    var indicator = document.getElementById("indicator");
+
+    function register() {
+        regForm.style.transform = "translateX(0px)";
+        loginForm.style.transform = "translateX(0px)";
+        indicator.style.transform = "translateX(100px)";
+    }
+
+    function login() {
+        regForm.style.transform = "translateX(300px)";
+        loginForm.style.transform = "translateX(300px)";
+        indicator.style.transform = "translateX(0px)";
+    }
+</script>
+<!--
+<script type="text/javascript">
+    var imageElement = document.getElementById('img');
+    var imageArray = ["img/1.png", "img/2.png", "img/3.png"];
+    var i = 0;
+    setInterval(() => {
+        imageElement.src = imageArray[i];
+        i = i + 1;
+        i = i % imageArray.length;
+    }, 3000);
+</script>
+-->
+</html>
