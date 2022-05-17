@@ -20,12 +20,20 @@
 <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 </head>
 <body>
-<%!String name=""; %>
+<%!String name="",eml = ""; %>
 <%
 	Connection cn = new Connection();
 	try{
+		Cookie ck[] = request.getCookies();
+		for(int i=0;i<ck.length;i++) {
+			if(ck[i].getName().equals("email")) {
+				eml = ck[i].getValue();
+				break;
+			}
+		}
+		
 		MongoCollection<Document> collection = cn.getCollection("fillResumeData");
-		Document myEmail = collection.find(eq("email", request.getParameter("email"))).first();
+		Document myEmail = collection.find(eq("email", eml)).first();
 		name = myEmail.get("firstname")+" "+myEmail.get("lastname");
 		%>
 		
@@ -55,9 +63,9 @@
 					<h2>Education</h2>
 				</div>
 				<div class="yui-u educationChild">
-					<h2>Indiana University - Bloomington, Indiana</h2>
-					<h3>Dual Major, Economics and English &mdash; <strong>4.0 CGPA</strong> </h3>
-					<h3>Passing Year</h3>
+					<h2><%=myEmail.get("institute_name")%></h2>
+					<h3>Bachelor in Technology &mdash; <strong><%=myEmail.get("cgpa")%></strong> </h3>
+					<h3><%=myEmail.get("passing_year")%></h3>
 				</div>
 			</div>
 			<div id="bd">
@@ -71,8 +79,8 @@
 							<div class="yui-u skillchild">
 
 								<div class="talent skillGrandchild">
-									<h2>Web Design</h2>
-									<h3>Proficiency</h3>
+									<h2><%=myEmail.get("skill")%></h2>
+									<h3><%=myEmail.get("proficiency")%></h3>
 								</div>
 
 								<div class="talent skillGrandchild">
@@ -97,8 +105,8 @@
 							<div class="yui-u projectChild">
 
 								<div class="job projectGrandchild">
-									<h2>Project Title</h2>
-									<p>Project Description</p>
+									<h2><%=myEmail.get("project_title")%></h2>
+									<p><%=myEmail.get("project_desc")%></p>
 								</div>
 
 								<div class="job projectGrandchild">
@@ -117,9 +125,9 @@
 							<div class="yui-u jobChild">
 
 								<div class="job jobGrandchild">
-									<h2>Organization Name</h2>
-									<h3>Role<h3>
-									<h4>Start Date-End Date</h4>
+									<h2><%=myEmail.get("organization_name")%></h2>
+									<h3><%=myEmail.get("role")%></h3>
+									<h4><%=myEmail.get("start-date")+" - "+myEmail.get("end-date")%></h4>
 								</div>
 
 								<div class="job jobGrandchild">
@@ -137,7 +145,7 @@
 
 							<div class="yui-u hobbyChild">
 								<div class="job hobbyGrandchild">
-									<h2>Hobby 1</h2>
+									<h2><%=myEmail.get("hobbies")%></h2>
 								</div>
 
 								<div class=" job hobbyGrandchild">
@@ -151,7 +159,7 @@
 		</div>
 	</div>
 		
-		<% 
+	<% 
 		
 	}
 	catch(Exception e){

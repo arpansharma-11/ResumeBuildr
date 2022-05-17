@@ -52,7 +52,7 @@ public class FillRegisterDetails extends HttpServlet {
 						.append("password", request.getParameter("password"));
 				collection.insertOne(document);
 				
-				int expireTime = 1;
+				int expireTime = 2000;
 				
 				Cookie fn = new Cookie("first_name",request.getParameter("first_name"));
 				fn.setMaxAge(expireTime);
