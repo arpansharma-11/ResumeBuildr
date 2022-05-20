@@ -20,6 +20,7 @@ import Connect.Connection;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -53,6 +54,8 @@ public class CheckLogin extends HttpServlet {
 			
 			if(myEmail != null){
 				if(myEmail.get("password").equals(request.getParameter("password"))){
+					Cookie eml = new Cookie("email",request.getParameter("email"));
+					response.addCookie(eml);
 					response.sendRedirect("data.jsp");
 				}
 				else{

@@ -594,7 +594,8 @@ fieldset {
 .build-page .form-container form .line6 .col,
 .build-page .form-container form .line7 .col,
 .build-page .form-container form .line8 .col,
-.build-page .form-container form .line9 .col{
+.build-page .form-container form .line9 .col,
+.build-page .form-container form .line10 .col{
     flex-direction: row;
     flex-basis: 45%;
 }
@@ -619,6 +620,18 @@ fieldset {
     border: 1px solid yellow;
     color: yellow;
     background-color: transparent;
+}
+
+.build-page .add {
+    width: 50px;
+    padding: 5px;
+    background: rgb(255, 255, 255, 0.5);
+    color: #000;
+}
+
+.build-page .add:hover {
+    background: rgb(255, 255, 255, 0.5);
+    color: #000;
 }
 
 @media only screen and (max-width: 900px) {

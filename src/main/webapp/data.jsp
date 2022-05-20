@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Quando&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="addField.js"></script>
 </head>
 
 <%!String fn="",ln="",eml="",phn="";%>
@@ -33,7 +34,7 @@
 		}
 	}
 %>
-
+    
 <body>
     <div class="navbar">
         <div class="logo">
@@ -56,24 +57,24 @@
 
     <section class="build-page container">
         <div class="form-container">
-            <form action="FillDatabase" method="POST">
+            <form action="fillDatabase" method="post" id="form1">
                 <fieldset>
                     <legend>Personal Details</legend>
                     <div class="row line1">
                         <div class="col">
-                            <input type="text" name="first_name" id="first_name" placeholder="First Name" value=<%=fn%> required>
+                            <input type="text" name="first_name" id="first_name" placeholder="First Name" value=<%=fn%>>
                         </div>
                         <div class="col">
-                            <input type="text" name="last_name" id="last_name" placeholder="Last Name" value=<%=ln%> required>
+                            <input type="text" name="last_name" id="last_name" placeholder="Last Name" value=<%=ln%>>
                         </div>
                     </div>
 
                     <div class="row line2">
                         <div class="col">
-                            <input type="text" name="email" id="email" placeholder="Email" value=<%=eml%> required>
+                            <input type="text" name="email" id="email" placeholder="Email" value=<%=eml%>>
                         </div>
                         <div class="col">
-                            <input type="text" name="phone" id="phone" placeholder="Phone" value=<%=phn%> required>
+                            <input type="text" name="phone" id="phone" placeholder="Phone" value=<%=phn%>>
                         </div>
                     </div>
 
@@ -93,14 +94,14 @@
                     </div>
                 </fieldset>
 
-                <fieldset>
+                <fieldset id="f1">
                     <legend>Educational Qualifications</legend>
                     <div class="row line4">
                         <div class="col">
-                            <input type="text" name="qualification" placeholder="Enter your qualification"><br>
+                            <input type="text" name="qualification" placeholder="Enter your qualification">
                         </div>
                         <div class="col">
-                            <input type="text" name="institute_name" placeholder="Enter Insititute Name"><br>
+                            <input type="text" name="institute_name" placeholder="Enter Insititute Name">
                         </div>
                     </div>
 
@@ -112,34 +113,36 @@
                             <input type="text" name="passing_year" placeholder="Enter Passing Year">
                         </div>
                     </div>
+                    <input type="button" onclick="addEducation()" value="Add" name="add" id="add" class="form-btn add"></button>
                 </fieldset>
 
-                <fieldset>
+                <fieldset id="f2">
                     <legend>Skills</legend>
                     <div class="row line6">
                         <div class="col">
                             <input type="text" name="skill" placeholder="Enter Skill">
                         </div>
                         <div class="col option">
-                            <input type="radio" name="proficiency" id="beginner" value="Beginner">
+                            <input type="radio" name="proficiency" id="beginner" value="1">
                             <label for="beginner">Beginner</label>
                         </div>
                         <div class="col option">
-                            <input type="radio" name="proficiency" id="amateur" value="Amatuer">
+                            <input type="radio" name="proficiency" id="amateur" value="2">
                             <label for="amateur">Amateur</label>
                         </div>
                         <div class="col option">
-                            <input type="radio" name="proficiency" id="professional" value="Professional">
+                            <input type="radio" name="proficiency" id="professional" value="3">
                             <label for="professional">Professional</label>
                         </div>
                         <div class="col option">
-                            <input type="radio" name="proficiency" id="expert" value="Expert">
+                            <input type="radio" name="proficiency" id="expert" value="4">
                             <label for="expert">Expert</label>
                         </div>
                     </div>
+                    <input type="button" onclick="addSkills()" value="Add" name="add" id="skillAdd" class="form-btn add">
                 </fieldset>
 
-                <fieldset>
+                <fieldset id="f3">
                     <legend>Projects</legend>
                     <div class="row line7">
                         <div class="col">
@@ -149,9 +152,10 @@
                             <input type="text" name="project_desc" placeholder="Project Description">
                         </div>
                     </div>
+                    <input type="button" onclick="addProjects()" value="Add" name="add" id="projectAdd" class="form-btn add">
                 </fieldset>
 
-                <fieldset>
+                <fieldset id="f4">
                     <legend>Work Experience</legend>
                     <div class="row line8">
                         <div class="col">
@@ -170,15 +174,20 @@
                             <input type="date" name="end-date" placeholder="End Date">
                         </div>
                     </div>
+                    <input type="button" onclick="workExperience()" value="Add" name="add" id="workAdd" class="form-btn add">
                 </fieldset>
 
-                <fieldset>
+                <fieldset id="f5">
                     <legend>Hobbies</legend>
                     <div class="row line10">
                         <div class="col">
                             <input type="text" name="hobbies" placeholder="Enter your hobby">
                         </div>
+                        <!-- <div class="col">
+                            <input type="button" onclick="addHobby()" id="addHobby" value="Add" name="add" class="form-btn add">
+                        </div> -->
                     </div>
+                    <input type="button" onclick="addHobbies()" id="addHobby" value="Add" name="add" class="form-btn add">
                 </fieldset>
                 <input type="submit" value="Generate Resume" name="submit-btn" class="form-btn">
             </form>
@@ -211,6 +220,8 @@
     </section>
 </body>
 
+
+
 <script type="text/javascript">
     var menuItems = document.getElementById("menuItems");
     menuItems.style.maxHeight = "0px";
@@ -221,6 +232,12 @@
         } else {
             menuItems.style.maxHeight = "0px";
         }
+    }
+</script>
+
+<script text="text/javascript">
+    function addSec() {
+
     }
 </script>
 </body>
