@@ -57,7 +57,7 @@
 
     <section class="build-page container">
         <div class="form-container">
-            <form action="fillDatabase" method="post" id="form1">
+            <form action="FillDatabase" method="post" id="form1">
                 <fieldset>
                     <legend>Personal Details</legend>
                     <div class="row line1">
@@ -121,22 +121,6 @@
                     <div class="row line6">
                         <div class="col">
                             <input type="text" name="skill" placeholder="Enter Skill">
-                        </div>
-                        <div class="col option">
-                            <input type="radio" name="proficiency" id="beginner" value="1">
-                            <label for="beginner">Beginner</label>
-                        </div>
-                        <div class="col option">
-                            <input type="radio" name="proficiency" id="amateur" value="2">
-                            <label for="amateur">Amateur</label>
-                        </div>
-                        <div class="col option">
-                            <input type="radio" name="proficiency" id="professional" value="3">
-                            <label for="professional">Professional</label>
-                        </div>
-                        <div class="col option">
-                            <input type="radio" name="proficiency" id="expert" value="4">
-                            <label for="expert">Expert</label>
                         </div>
                     </div>
                     <input type="button" onclick="addSkills()" value="Add" name="add" id="skillAdd" class="form-btn add">

@@ -107,76 +107,6 @@ function addSkills() {
 
     div61.appendChild(inp61);
 
-
-    var div62 = document.createElement("div");
-    div62.setAttribute("class", "col option");
-
-    new_field1.appendChild(div62);
-
-    var r1 = document.createElement("input");
-    r1.setAttribute("type", "radio");
-    r1.setAttribute("id", "beginner");
-    r1.setAttribute("name", "proficiency");
-    r1.setAttribute("value", "1");
-    var l1 = document.createElement("label");
-    l1.setAttribute("for", "Beginner");
-    l1.textContent = "Beginner";
-
-    div62.appendChild(r1);
-    div62.appendChild(l1);
-
-    var div63 = document.createElement("div");
-    div63.setAttribute("class", "col option");
-
-    new_field1.appendChild(div63);
-
-
-    var r2 = document.createElement("input");
-    r2.setAttribute("type", "radio");
-    r2.setAttribute("id", "amateur");
-    r2.setAttribute("name", "proficiency");
-    r2.setAttribute("value", "2");
-    var l2 = document.createElement("label");
-    l2.setAttribute("for", "amateur");
-    l2.textContent = "Amateur";
-
-    div63.appendChild(r2);
-    div63.appendChild(l2);
-
-    var div64 = document.createElement("div");
-    div64.setAttribute("class", "col option");
-
-    new_field1.appendChild(div64);
-
-    var r3 = document.createElement("input");
-    r3.setAttribute("type", "radio");
-    r3.setAttribute("id", "professional");
-    r3.setAttribute("name", "proficiency");
-    r3.setAttribute("value", "3");
-    var l3 = document.createElement("label");
-    l3.setAttribute("for", "professional");
-    l3.textContent = "Professional";
-
-    div64.appendChild(r3);
-    div64.appendChild(l3);
-
-    var div65 = document.createElement("div");
-    div65.setAttribute("class", "col option");
-
-    new_field1.appendChild(div65);
-
-    var r4 = document.createElement("input");
-    r4.setAttribute("type", "radio");
-    r4.setAttribute("id", "expert");
-    r4.setAttribute("name", "proficiency");
-    r4.setAttribute("value", "4");
-    var l4 = document.createElement("label");
-    l4.setAttribute("for", "expert");
-    l4.textContent = "Expert";
-
-    div65.appendChild(r4);
-    div65.appendChild(l4);
-
     var btn = document.getElementById("skillAdd");
 
     x.insertBefore(new_field1, btn);
@@ -184,9 +114,7 @@ function addSkills() {
     var line6 = document.querySelectorAll(".line6 .col input");
 
     for (var i = 0; i < line6.length; i++) {
-        if (i%5== 0) {
-            line6[i].name = "skill" + i%5;
-        } 
+        line6[i].name = "skill_" + i;
     }
 
 }

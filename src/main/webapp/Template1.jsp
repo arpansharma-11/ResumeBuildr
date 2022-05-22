@@ -8,6 +8,7 @@
 <%@ page import = "static com.mongodb.client.model.Filters.*"%>
 <%@ page import = "static com.mongodb.client.model.Updates.*"%>
 <%@ page import = "Connect.Connection"%>
+<%@ page import = "java.util.*" %>
 
 <!DOCTYPE html>
 <html>
@@ -63,9 +64,18 @@
 					<h2>Education</h2>
 				</div>
 				<div class="yui-u educationChild">
-					<h2><%=myEmail.get("institute_name")%></h2>
-					<h3>Bachelor in Technology &mdash; <strong><%=myEmail.get("cgpa")%></strong> </h3>
-					<h3><%=myEmail.get("passing_year")%></h3>
+
+					<%
+						ArrayList<Document> qualification = (ArrayList<Document>)myEmail.get("qualifications");
+						for(Document i:qualification){
+							%>
+								<h2><%=i.get("institute_name")%></h2>
+								<h3><%=i.get("qualification")%> &mdash; <strong><%=i.get("cgpa")%></strong> </h3>
+								<h3><%=i.get("passing_year")%></h3>
+							<% 
+						}
+					%>
+					
 				</div>
 			</div>
 			<div id="bd">
@@ -77,20 +87,13 @@
 								<h2>Skills</h2>
 							</div>
 							<div class="yui-u skillchild">
-
 								<div class="talent skillGrandchild">
-									<h2><%=myEmail.get("skill")%></h2>
-									<h3><%=myEmail.get("proficiency")%></h3>
-								</div>
-
-								<div class="talent skillGrandchild">
-									<h2>Interface Design</h2>
-									<h3>Proficiency</h3>
-								</div>
-
-								<div class="talent skillGrandchild">
-									<h2>Project Direction</h2>
-									<h3>Proficiency</h3>
+									<%
+										ArrayList<String> skill = (ArrayList<String>)myEmail.get("skills");
+										for(String i:skill){
+											%><h2><%=i%></h2><% 
+										}
+									%>
 								</div>
 							</div>
 						</div>
@@ -105,15 +108,16 @@
 							<div class="yui-u projectChild">
 
 								<div class="job projectGrandchild">
-									<h2><%=myEmail.get("project_title")%></h2>
-									<p><%=myEmail.get("project_desc")%></p>
+									<%
+										ArrayList<Document> project = (ArrayList<Document>)myEmail.get("projects");
+										for(Document j:project){
+											%>
+												<h2><%=j.get("project_title")%></h2>
+												<p><%=j.get("project_description")%></p>
+											<% 
+										}
+									%>
 								</div>
-
-								<div class="job projectGrandchild">
-									<h2>Project Title</h2>
-									<p>Project Description</p>
-								</div>
-
 							</div>
 						</div>
 						<div class="yui-gf jobParent">
@@ -125,15 +129,22 @@
 							<div class="yui-u jobChild">
 
 								<div class="job jobGrandchild">
+									<!-- 
 									<h2><%=myEmail.get("organization_name")%></h2>
 									<h3><%=myEmail.get("role")%></h3>
 									<h4><%=myEmail.get("start-date")+" - "+myEmail.get("end-date")%></h4>
-								</div>
-
-								<div class="job jobGrandchild">
-									<h2>Organization Name</h2>
-									<h3>Role<h3>
-									<h4>Start Date-End Date</h4>
+									-->
+									<%
+										ArrayList<Document> organization = (ArrayList<Document>)myEmail.get("organizations");
+										for(Document j:organization){
+											%>
+												<h2><%=j.get("organization_name")%></h2>
+												<h3><%=j.get("role")%></h3>
+												<h4><%=j.get("start-date")%></h4>
+												<h4><%=j.get("end-date")%></h4>
+											<% 
+										}
+									%>
 								</div>
 							</div>
 						</div>
@@ -145,11 +156,12 @@
 
 							<div class="yui-u hobbyChild">
 								<div class="job hobbyGrandchild">
-									<h2><%=myEmail.get("hobbies")%></h2>
-								</div>
-
-								<div class=" job hobbyGrandchild">
-									<h2>Hobby 2</h2>
+									<%
+										ArrayList<String> hobby = (ArrayList<String>)myEmail.get("hobbies");
+										for(String i:hobby){
+											%><h2><%=i%></h2><% 
+										}
+									%>
 								</div>
 							</div>
 						</div>
